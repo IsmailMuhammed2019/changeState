@@ -11,7 +11,7 @@ const styles = {
     <div 
     className='box' 
     style={styles}
-    onClick={() => props.handle(props.id)}
+    onClick={props.handle}
     >
      
     </div>
