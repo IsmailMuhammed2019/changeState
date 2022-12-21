@@ -2,6 +2,7 @@ import React from 'react'
 
 const Box = (props) => {
 
+
 const styles = {
  backgroundColor: props.on ? "#222222" : "transparent"
 }
@@ -10,8 +11,10 @@ const styles = {
     <div 
     className='box' 
     style={styles}
-    onClick={() => (props.handle)}
-    ></div>
+    onClick={() => props.handle(props.id)}
+    >
+     
+    </div>
   )
 }
 

@@ -1,11 +1,26 @@
-
+import React from 'react'
 import './App.css';
 import data from './data'
 import Box from './Box'
 
 function App() {
+
+  const [allData, setAllData] = React.useState(data)
   
-  const allBoxes = data.map(singleBox => <Box on={singleBox.on} key={singleBox.on}/>)
+  function handle(id){
+    setAllData(prevState => {
+      return prevState.map((square) => {
+        return square.id === id ? {...square, on: !square.on} : square
+      })
+    })
+  }
+
+  const allBoxes = allData.map(singleBox => <Box 
+  on={singleBox.on} 
+  key={singleBox.id}
+  id={singleBox.id}
+  handle={handle}
+  />)
 
   return (
     <div>
