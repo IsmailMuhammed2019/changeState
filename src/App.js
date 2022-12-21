@@ -9,8 +9,8 @@ function App() {
   
   function handle(id){
     setAllData(prevState => {
-      return prevState.map((square) => {
-        return square.id === id ? {...square, on: !square.on} : square
+      return prevState.map(square => {
+        return square.id === id ? {...square, on: !square.on} : square 
       })
     })
   }
@@ -18,8 +18,7 @@ function App() {
   const allBoxes = allData.map(singleBox => <Box 
   on={singleBox.on} 
   key={singleBox.id}
-  id={singleBox.id}
-  handle={handle}
+  handle={() => handle(singleBox.id)}
   />)
 
   return (
