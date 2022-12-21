@@ -5,7 +5,7 @@ import Box from './Box'
 
 function App() {
   
-  const allBoxes = data.map(singleBox => <Box />)
+  const allBoxes = data.map(singleBox => <Box on={singleBox.on} key={singleBox.on}/>)
 
   return (
     <div>
